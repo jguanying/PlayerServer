@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+     <item android:drawable="@android:color/transparent" android:state_enabled="false" android:state_window_focused="false"/>
+    <item android:drawable="@drawable/pb_pic_focused" android:state_pressed="true"/>
+    <item android:drawable="@drawable/pb_pic_selected" android:state_selected="true"/>
+    <item android:drawable="@drawable/pb_pic_focused" android:state_enabled="true" android:state_focused="true"/>
+    <item android:drawable="@color/image_viewer_bg_color" android:state_enabled="true"/>
+    <item android:drawable="@color/image_viewer_bg_color" android:state_focused="true"/>
+    <item android:drawable="@color/image_viewer_bg_color"/>
+
+</selector>
