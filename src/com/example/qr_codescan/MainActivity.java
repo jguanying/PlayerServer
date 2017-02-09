@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -33,6 +34,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Log.d("TAG", "onCreate.....begin"); 
 		setContentView(R.layout.activity_main);
 		
 		// 注册广播接收
@@ -67,6 +69,7 @@ public class MainActivity extends Activity {
 		Intent serviceIntent = new Intent(getApplicationContext(), AndroidServer.class);
 		startService(serviceIntent);
 		
+		Log.d("TAG", "onCreate.....end");
 //		Intent mHomeIntent = new Intent(Intent.ACTION_MAIN);  
 //		  
 //		mHomeIntent.addCategory(Intent.CATEGORY_HOME);  

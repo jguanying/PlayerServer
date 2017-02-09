@@ -14,10 +14,15 @@ public class BootBroadcastReceiver extends BroadcastReceiver {
 //        //后边的XXX.class就是要启动的服务  
 //        Intent service = new Intent(context, AndroidServer.class);  
 //        context.startService(service);  
-        Log.v("TAG", "开机自动服务自动启动.....");  
+        Log.d("TAG", "开机自动服务自动启动.....begin");  
 //       //启动应用，参数为需要自动启动的应用的包名 
-		Intent intent1 = new Intent(context, MainActivity.class); 
-		intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); 
-		context.startActivity(intent1);        
+		Intent newIntent = new Intent(context, MainActivity.class); 
+		newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); 
+		context.startActivity(newIntent);    
+		
+		Intent serviceIntent = new Intent(context, AndroidServer.class);
+		context.startService(serviceIntent);
+		
+		Log.d("TAG", "开机自动服务自动启动.....end");
     }  
 }

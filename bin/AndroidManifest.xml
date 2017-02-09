@@ -39,13 +39,28 @@
             android:windowSoftInputMode="stateAlwaysHidden" >
         </activity>
         
- 		<receiver android:name="com.example.qr_codescan.BootBroadcastReceiver">  
-                <intent-filter>  
-                    <action android:name="android.intent.action.BOOT_COMPLETED"></action>  
-                    <category android:name="android.intent.category.LAUNCHER" />  
-                </intent-filter>  
-            </receiver> 
+ 		<receiver android:name="com.example.qr_codescan.BootBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" /> 
+            </intent-filter>
+           <intent-filter>
+                <action android:name="RestartSerivcesForSystemEventReceiver" />   
+            </intent-filter>
+           <intent-filter>
+	        <action android:name="android.intent.action.MEDIA_MOUNTED" />
+	        <action android:name="android.intent.action.MEDIA_UNMOUNTED" />
+	        <action android:name="android.intent.action.MEDIA_EJECT" />
+	        <data android:scheme="file" >
+        </data>  
+            </intent-filter>
+        </receiver>
             
+ 		<receiver android:name="com.example.qr_codescan.NetworkReceiver">  
+            <intent-filter>  
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>  
+            </intent-filter>  
+        </receiver> 
+        
          <service android:name="com.socket.server.AndroidServer"></service>
         
     </application>
